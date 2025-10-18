@@ -6,27 +6,21 @@
 		<title>Document</title>
 	</head>
 	<body>
-		<p>Chiikawa 角色介紹懶人包</p>
-		<ul>
-			<li><a href="#bird1">吉伊卡哇</a></li>
-			<li><a href="#bird2">小八貓</a></li>
-			<li><a href="#bird3">小桃</a></li>
-		</ul>
-		<br />
+		<form>
+			<label for="TVlist">最常觀看的節目:</label>
+			<select id="TVlist" name="favoriteTV">
+				<optgroup label="國內新聞台">
+					<option value="TVSBS">TVBS</option>
+					<option value="CNN">CNN</option>
+				</optgroup>
 
-		<div class="">
-			<h2 id="bird1">吉伊卡哇</h2>
-			<p>Lorem 1000</p>
-		</div>
+				<optgroup label="國外新聞台">
+					<option value="HBO">HBO</option>
+					<option value="NHK">NHK</option>
+				</optgroup>
 
-		<div class="">
-			<h2 id="bird2">小八貓</h2>
-			<p>Lorem 1000</p>
-		</div>
-
-		<div class="">
-			<h2 id="bird3">小桃</h2>
-			<p>Lorem 1000</p>
-		</div>
+				<option value="other">其他</option>
+			</select>
+		</form>
 	</body>
 </html>
