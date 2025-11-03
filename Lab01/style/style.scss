@@ -1,49 +1,69 @@
 * {
+	/* 統一清除瀏覽器的預設邊距和內邊距 */
 	margin: 0;
 	padding: 0;
+	/* 確保元素的寬高包含邊框和內邊距，便於佈局計算 */
 	box-sizing: border-box;
 }
 
+/* --- 區塊二：頁面佈局 (Body Layout) --- */
 body {
+	/* 啟用 Flexbox，用於內容居中 */
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	min-height: 100vh;
+
 	.container {
 		width: 90%;
-		height: 100vh;
+		min-height: 100vh;
 		display: flex;
 		justify-content: center;
 		align-items: center;
+
+		/* --- 區塊三：面板基礎樣式 (Panel Base Style) --- */
 		.panel {
+			/* 設置背景圖片的覆蓋、居中和不重複 */
 			background-size: cover;
 			background-position: center;
 			background-repeat: no-repeat;
+			/* 面板高度固定為視窗高度的 80% */
 			height: 80vh;
 			border-radius: 20px;
 			cursor: pointer;
 
-			flex: 0.5; /* 預設收縮比例 */
-			transition: flex 0.7s cubic-bezier(0.05, 0.9, 0.3, 0.95);
+			/* 預設收縮狀態：flex-grow 設為 0.5 (佔用較小比例空間) */
+			flex: 0.5;
+
+			transition: all 0.7s ease-in;
+			/* 相對定位，作為子元素 h3 絕對定位的基準點 */
 			position: relative;
 			h3 {
 				position: absolute;
 				bottom: 20px;
 				left: 20px;
+				/* 文字顏色 (目前為黑色，建議改為白色以增加圖片上的可讀性) */
 				color: black;
+				background-color: pink;
 				font-size: 24px;
-				opacity: 0; // 預設隱藏
-				// transition: opacity 0.3s ease-in 0.4s; // 延遲顯示
+				opacity: 0;
 			}
 		}
 
+		/* --- 區塊四：展開狀態樣式 (Active State) --- */
 		.active {
+			/* 展開狀態：flex-grow 設為 5 (佔用較大比例空間) */
 			flex: 5;
+
 			h3 {
 				opacity: 1;
+				transition: all 0.3s ease-in;
 			}
 		}
 	}
 }
+
+/* --- 區塊五：個別面板背景圖片定義 (Background Images) --- */
 .panelA {
 	background-image: url("../image/imageA.jpg");
 }
