@@ -1,0 +1,62 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.container {
+		width: 90%;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		.panel {
+			background-size: cover;
+			background-position: center;
+			background-repeat: no-repeat;
+			height: 80vh;
+			border-radius: 20px;
+			cursor: pointer;
+
+			flex: 0.5; /* 預設收縮比例 */
+			transition: flex 0.7s cubic-bezier(0.05, 0.9, 0.3, 0.95);
+			position: relative;
+			h3 {
+				position: absolute;
+				bottom: 20px;
+				left: 20px;
+				color: black;
+				font-size: 24px;
+				opacity: 0; // 預設隱藏
+				// transition: opacity 0.3s ease-in 0.4s; // 延遲顯示
+			}
+		}
+
+		.active {
+			flex: 5;
+			h3 {
+				opacity: 1;
+			}
+		}
+	}
+}
+.panelA {
+	background-image: url("../image/imageA.jpg");
+}
+
+.panelB {
+	background-image: url("../image/imageB.jpg");
+}
+.panelC {
+	background-image: url("../image/imageC.jpg");
+}
+.panelD {
+	background-image: url("../image/imageD.jpg");
+}
+.panelE {
+	background-image: url("../image/imageE.jpg");
+}

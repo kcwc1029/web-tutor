@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Expanding Cards</title>
+		<link rel="stylesheet" href="style/style.css" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="panel panelA active">
+				<h3>Explore The World</h3>
+			</div>
+			<div class="panel panelB">
+				<h3>Wild Forest</h3>
+			</div>
+			<div class="panel panelC">
+				<h3>Sunny Beach</h3>
+			</div>
+
+			<div class="panel panelD">
+				<h3>City on Winter</h3>
+			</div>
+
+			<div class="panel panelE">
+				<h3>Mountains - Clouds</h3>
+			</div>
+		</div>
+	</body>
+	<script>
+		const panels = document.querySelectorAll(".panel");
+
+		// 輔助函數：用於移除所有 'active' 類別
+		function removeActiveClasses() {
+			panels.forEach((panel) => {
+				panel.classList.remove("active");
+			});
+		}
+
+		// 為每一個 panel 添加點擊事件監聽器
+		panels.forEach((panel) => {
+			panel.addEventListener("click", () => {
+				// 點擊時，先收縮所有面板，然後展開當前面板
+				removeActiveClasses();
+				panel.classList.add("active");
+			});
+		});
+	</script>
+</html>
